@@ -10,6 +10,7 @@
     "build": "tsc -p tsconfig.build.json",
     "check": "pnpm typecheck && pnpm test",
     "clean": "rimraf dist coverage",
+    "db:migrate": "tsx src/migrate-cli.ts",
     "dev": "node --watch --import tsx src/index.ts",
     "start": "node dist/index.js",
     "test": "vitest run",
@@ -19,10 +20,15 @@
     "@arcane-table/config": "workspace:*",
     "@arcane-table/converter-core": "workspace:*",
     "@arcane-table/persistence": "workspace:*",
+    "@arcane-table/plugin-sdk": "workspace:*",
     "@arcane-table/protocol": "workspace:*",
-    "fastify": "5.12.5"
+    "@fastify/cookie": "11.0.2",
+    "@node-rs/argon2": "2.0.2",
+    "fastify": "5.12.5",
+    "zod": "catalog:"
   },
   "devDependencies": {
+    "@testcontainers/postgresql": "10.28.0",
     "tsx": "4.20.6",
     "typescript": "5.9.3",
     "vitest": "3.2.4"

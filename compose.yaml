@@ -22,10 +22,13 @@ services:
       context: .
       target: api
     environment:
+      BOOTSTRAP_ADMIN_PASSWORD: ${BOOTSTRAP_ADMIN_PASSWORD:?Set BOOTSTRAP_ADMIN_PASSWORD}
+      BOOTSTRAP_ADMIN_USERNAME: ${BOOTSTRAP_ADMIN_USERNAME:-admin}
       DATABASE_URL: postgres://app:${POSTGRES_PASSWORD:-app}@postgres:5432/app
       HOST: 0.0.0.0
       NODE_ENV: production
       PORT: 3000
+      SESSION_TTL_HOURS: ${SESSION_TTL_HOURS:-12}
     depends_on:
       postgres:
         condition: service_healthy

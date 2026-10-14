@@ -19,6 +19,7 @@
     "lint": "biome lint .",
     "registry:check": "node scripts/check-registry.mjs",
     "test": "turbo run test",
+    "test:e2e": "playwright test",
     "test:changed": "turbo run test --filter=...[HEAD^]",
     "test:foundry-smoke": "turbo run build --filter=@arcane-table/converter-cli && node scripts/foundry-smoke.mjs",
     "typecheck": "turbo run typecheck",
@@ -27,6 +28,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.5",
+    "@playwright/test": "1.56.1",
     "@types/node": "22.18.10",
     "fast-check": "4.3.0",
     "pnpm": "10.18.3",

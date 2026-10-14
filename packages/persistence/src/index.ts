@@ -1,15 +1,33 @@
 import type { CanvasId } from "@arcane-table/domain";
 import { drizzle } from "drizzle-orm/node-postgres";
-import { jsonb, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 import { Pool } from "pg";
+import { canvases as canvasTable } from "./schema.js";
 
-export const canvases = pgTable("canvases", {
-  createdAt: timestamp("created_at", { mode: "date", withTimezone: true }).defaultNow().notNull(),
-  id: uuid("id").primaryKey(),
-  name: text("name").notNull(),
-  snapshot: jsonb("snapshot").notNull().default({}),
-  updatedAt: timestamp("updated_at", { mode: "date", withTimezone: true }).defaultNow().notNull(),
-});
+export {
+  auditEvents,
+  canvases,
+  sessions,
+  userRoles,
+  users,
+} from "./schema.js";
+export { migrate } from "./migrate.js";
+export {
+  createMemoryAuthStore,
+  createPostgresAuthStore,
+  sanitizeAuditDetails,
+} from "./auth-store.js";
+export type {
+  AuthStore,
+  NewAuditEvent,
+  NewSession,
+  NewUser,
+  Page,
+  PageQuery,
+  StoredAudit,
+  StoredSession,
+  StoredUser,
+  UserPatch,
+} from "./auth-store.js";
 
 export type CanvasRecord = Readonly<{
   createdAt: Date;
@@ -38,7 +56,7 @@ export const createDatabaseHealthProbe =
   };
 
 export const createCanvasRepository = (pool: Pool): CanvasRepository => {
-  const database = drizzle(pool, { schema: { canvases } });
+  const database = drizzle(pool, { schema: { canvases: canvasTable } });
   return {
     findById: async (id) => {
       const record = await database.query.canvases.findFirst({

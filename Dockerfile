@@ -17,6 +17,7 @@ COPY packages/converter-schemas/package.json packages/converter-schemas/package.
 COPY packages/protocol/package.json packages/protocol/package.json
 COPY packages/domain/package.json packages/domain/package.json
 COPY packages/persistence/package.json packages/persistence/package.json
+COPY packages/plugin-sdk/package.json packages/plugin-sdk/package.json
 COPY packages/canvas-core/package.json packages/canvas-core/package.json
 COPY packages/canvas-pixi/package.json packages/canvas-pixi/package.json
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store pnpm install --frozen-lockfile

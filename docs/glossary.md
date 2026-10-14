@@ -12,7 +12,11 @@
 - **Projection:** derived read/client state rebuildable from canonical data.
 - **Revision:** monotonic sequence number within a state stream.
 - **Ruleset:** game-system-specific mechanics behind the ruleset boundary.
-- **Scene:** playable map plus grid, walls, tokens, lighting, and visibility configuration.
+- **Canvas:** internal rendering aggregate persisted for a Scene. It is not the product navigation term.
+- **Plugin:** trusted compile-time UI contribution with a versioned manifest, routes, and slots.
+- **Principal:** authenticated user and session derived by the server from a hashed session cookie.
+- **Role:** `admin`, `gm`, or `player` authorization assigned to a local account.
+- **Scene:** playable map plus grid, walls, tokens, lighting, and visibility configuration. Routes use this term; Canvas is its rendering aggregate.
 - **Snapshot:** authorized complete state at a declared revision.
 - **Source adapter:** impure reader that decodes external content into normalized converter input.
 - **VTT:** virtual tabletop.

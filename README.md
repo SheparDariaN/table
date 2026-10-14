@@ -5,20 +5,34 @@ Greenfield virtual tabletop built as a TypeScript modular monolith.
 ## Quick start
 
 Requirements: Node.js 22+, Corepack, Git, Docker Desktop for the container stack.
-JavaScript packages are currently downloaded from `https://registry.npmjs.org`.
-The GitVerse npm mirror remains available for a later connectivity test.
+JavaScript packages are downloaded from the GitVerse npm mirror at `https://npm-mirror.gitverse.ru`.
+There is no fallback to `registry.npmjs.org`.
 
 ```powershell
 corepack install
 corepack pnpm install
 Copy-Item .env.example .env
 corepack pnpm verify
+```
+
+Set `BOOTSTRAP_ADMIN_PASSWORD` in `.env` to a unique password of at least 12
+characters before starting the stack. Compose runs the API in production mode
+and refuses the placeholder values `change-me-in-production` and
+`replace-this-password`. The first empty database creates that admin account.
+Later starts do not reset it.
+
+```powershell
 docker compose up --build
 ```
 
-The web application is available at `http://localhost:8080`. For native
-development, set `DATABASE_URL` to a reachable PostgreSQL instance and run
-`corepack pnpm dev`.
+Open `http://localhost:8080/login`. After signing in, the shell exposes Worlds,
+Actors, Compendium, and Journal as reserved modules. Game masters and admins
+can use `/tools/converter`. Admins can manage users, sessions, audit, plugins,
+and system health under `/admin`.
+
+For native development, set `DATABASE_URL` to a reachable PostgreSQL instance
+and run `corepack pnpm dev`. The web client uses `http://localhost:5173`. Apply
+schema changes with `corepack pnpm --filter @arcane-table/api db:migrate`.
 
 Convert or inspect a Roll20 export:
 

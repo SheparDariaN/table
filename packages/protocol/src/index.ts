@@ -54,3 +54,37 @@ export const canvasEventSchema = z.discriminatedUnion("type", [
 export type HealthStatus = z.infer<typeof healthStatusSchema>;
 export type CanvasCommand = z.infer<typeof canvasCommandSchema>;
 export type CanvasEvent = z.infer<typeof canvasEventSchema>;
+
+export {
+  adminHealthSchema,
+  apiErrorSchema,
+  auditEventSchema,
+  auditPageSchema,
+  contractVersionSchema,
+  conversionDiagnosticSchema,
+  conversionRejectedSchema,
+  conversionResponseSchema,
+  createUserRequestSchema,
+  loginRequestSchema,
+  publicUserSchema,
+  roleSchema,
+  sessionResponseSchema,
+  updateUserRequestSchema,
+  userPageSchema,
+} from "./ui.js";
+export type {
+  AdminHealth,
+  ApiError,
+  AuditEvent,
+  AuditPage,
+  ConversionDiagnostic,
+  ConversionRejected,
+  ConversionResponse,
+  CreateUserRequest,
+  LoginRequest,
+  PublicUser,
+  Role,
+  SessionResponse,
+  UpdateUserRequest,
+  UserPage,
+} from "./ui.js";
