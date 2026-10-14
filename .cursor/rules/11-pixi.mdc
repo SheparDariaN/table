@@ -1,0 +1,22 @@
+---
+description: PixiJS scene graph, rendering, and resource lifecycle rules
+globs:
+  - "apps/web/**/*pixi*.ts"
+  - "apps/web/**/*renderer*.ts"
+  - "apps/web/**/canvas/**/*.ts"
+  - "apps/web/**/scene/**/*.ts"
+alwaysApply: false
+---
+
+# PixiJS
+
+- Keep Pixi objects behind a typed renderer adapter; never place them in application state.
+- Reconcile immutable render descriptions into the scene graph.
+- Keep world, screen, and grid coordinate transforms explicit and pure.
+- Reuse containers, textures, graphics, and object pools only with measured benefit.
+- Destroy owned GPU resources and detach ticker/listener callbacks on teardown.
+- Do not destroy shared textures or mutate shared assets implicitly.
+- Batch draw work and avoid allocations inside frame loops.
+- Make z-order, culling, hit areas, and interaction modes explicit.
+- Test coordinate transforms and reconciliation without a live GPU where possible.
+- Degrade gracefully after renderer/context failure and surface it through an error boundary.

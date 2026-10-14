@@ -1,0 +1,24 @@
+---
+description: Container, deployment, secret, and untrusted-input security rules
+globs:
+  - "infra/**/*"
+  - "**/Dockerfile"
+  - "**/Dockerfile.*"
+  - "**/*.dockerfile"
+  - "**/*compose*.yml"
+  - "**/*compose*.yaml"
+alwaysApply: false
+---
+
+# Docker and Security
+
+- Pin base images and dependencies; do not use floating production tags.
+- Use multi-stage builds and copy only required runtime artifacts.
+- Run as a non-root user with least privilege and a read-only filesystem where practical.
+- Keep secrets out of images, manifests, logs, build arguments, and committed env files.
+- Expose only required ports; keep PostgreSQL private by default.
+- Set health checks, graceful shutdown, resource limits, and log rotation.
+- Use separate least-privilege migration and runtime database credentials.
+- Reject archive traversal, links, zip bombs, executable imports, and oversized inputs.
+- Scan dependencies and images; remediate actionable high/critical findings.
+- Document and test backup restoration and production-only configuration.

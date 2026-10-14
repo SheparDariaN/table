@@ -1,0 +1,24 @@
+import { z } from "zod";
+
+const nodeEnvironmentSchema = z.enum(["development", "test", "production"]);
+const portSchema = z.coerce.number().int().min(1).max(65_535);
+
+export const apiEnvSchema = z.object({
+  DATABASE_URL: z.url(),
+  HOST: z.string().min(1).default("0.0.0.0"),
+  NODE_ENV: nodeEnvironmentSchema.default("development"),
+  PORT: portSchema.default(3000),
+});
+
+export const workerEnvSchema = z.object({
+  DATABASE_URL: z.url(),
+  NODE_ENV: nodeEnvironmentSchema.default("development"),
+});
+
+export type ApiEnv = z.infer<typeof apiEnvSchema>;
+export type WorkerEnv = z.infer<typeof workerEnvSchema>;
+export type Environment = Readonly<Record<string, string | undefined>>;
+
+export const parseApiEnv = (environment: Environment): ApiEnv => apiEnvSchema.parse(environment);
+export const parseWorkerEnv = (environment: Environment): WorkerEnv =>
+  workerEnvSchema.parse(environment);

@@ -1,0 +1,19 @@
+---
+description: HTTP and WebSocket delivery and application orchestration rules
+globs:
+  - "apps/api/**/*.ts"
+alwaysApply: false
+---
+
+# API
+
+- Keep handlers thin: parse, authenticate, authorize, invoke, map.
+- Validate request, response, and event contracts at runtime.
+- Accept user intent as commands; never accept trusted canonical state.
+- Require command IDs and expected revisions for retryable mutations.
+- Commit durable state before acknowledging success or broadcasting.
+- Return stable typed error codes; do not leak stack traces, SQL, or internals.
+- Enforce object-level authorization on every operation and subscription.
+- Apply body, upload, decompression, rate, and timeout limits.
+- Pass request context and transaction-scoped ports explicitly.
+- Keep transport types out of domain and persistence code.

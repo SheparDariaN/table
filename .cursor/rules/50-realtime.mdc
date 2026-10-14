@@ -1,0 +1,22 @@
+---
+description: Authoritative realtime event, snapshot, and reconnect rules
+globs:
+  - "apps/api/**/*realtime*.ts"
+  - "apps/api/**/*websocket*.ts"
+  - "apps/web/**/*realtime*.ts"
+  - "apps/web/**/*websocket*.ts"
+alwaysApply: false
+---
+
+# Realtime
+
+- Publish only canonical events derived from committed state.
+- Use at-least-once delivery semantics; never assume exactly-once transport.
+- Include contract version, event ID, stream ID, and revision in durable events.
+- Deduplicate by event ID and apply only contiguous stream revisions.
+- Stop incremental application on a gap; replay or replace with an authorized snapshot.
+- Reauthenticate reconnects and reauthorize each subscription.
+- Filter hidden data server-side before events or snapshots leave the API.
+- Separate ephemeral presence from durable game state.
+- Bound queues and apply explicit slow-consumer/disconnect policy.
+- Test duplicates, gaps, out-of-order delivery, reconnect, and revoked access.

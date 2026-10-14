@@ -1,0 +1,22 @@
+---
+description: PostgreSQL adapters, transactions, queries, and migration rules
+globs:
+  - "apps/api/**/*repository*.ts"
+  - "apps/api/**/*postgres*.ts"
+  - "apps/api/**/persistence/**/*.ts"
+  - "infra/**/*migration*.*"
+alwaysApply: false
+---
+
+# Persistence
+
+- Treat PostgreSQL as the durable source of truth.
+- Use parameterized queries and explicit column lists.
+- Enforce invariants with database constraints in addition to domain checks.
+- Scope transactions to one use case and keep network calls outside them.
+- Persist state, idempotency result, and outbox records atomically.
+- Use optimistic revisions for concurrent aggregate updates.
+- Return domain-facing types; do not leak driver rows or SQL details.
+- Prevent modules from writing another module's tables.
+- Make migrations forward-safe for rolling deployment and safe retry.
+- Integration-test queries, constraints, rollback, and migrations on PostgreSQL.

@@ -1,0 +1,21 @@
+---
+description: Pure deterministic converter pipeline and IR rules
+globs:
+  - "packages/converter-core/**/*.ts"
+  - "apps/api/**/import/**/*.ts"
+  - "apps/api/**/*converter*.ts"
+alwaysApply: false
+---
+
+# Converter
+
+- Keep filesystem, archive, network, and database I/O outside converter-core.
+- Use explicit decode, normalize, validate, map, canonicalize, and emit stages.
+- Return typed IR plus diagnostics; do not throw for expected malformed input.
+- Version IR and validate it at production and consumption boundaries.
+- Derive import IDs from canonical semantic identity and algorithm version only.
+- Never read current time, randomness, locale, environment, or process globals.
+- Canonically sort output where source order is not semantic.
+- Preserve unknown safe fields only in bounded, namespaced extensions.
+- Reject unsupported source/version combinations explicitly.
+- Golden-test output, diagnostics, deterministic IDs, and repeated-run equivalence.

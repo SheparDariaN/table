@@ -1,0 +1,19 @@
+---
+description: Framework-free domain modeling and module boundary rules
+globs:
+  - "packages/domain/**/*.ts"
+alwaysApply: false
+---
+
+# Domain
+
+- Do not import frameworks, transports, databases, renderers, or vendor SDKs.
+- Model IDs and constrained values with branded or opaque types.
+- Represent state variants and errors with discriminated unions.
+- Implement behavior as pure functions returning immutable state, events, or typed errors.
+- Inject clock, ID generation, ruleset behavior, and external lookups through narrow ports.
+- Keep aggregates small and enforce invariants at their mutation boundary.
+- Name domain events as past-tense facts and include schema versions.
+- Access other modules only through their public contracts.
+- Keep VTT-neutral concepts free of game-system-specific fields.
+- Write table-driven and property tests without I/O or wall-clock dependencies.

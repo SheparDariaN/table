@@ -1,0 +1,38 @@
+{
+  "name": "arcane-table",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.18.3",
+  "engines": {
+    "node": ">=22.15.0"
+  },
+  "scripts": {
+    "boundaries:check": "node scripts/check-boundaries.mjs",
+    "build": "turbo run build",
+    "check": "turbo run check",
+    "clean": "turbo run clean && rimraf coverage",
+    "compose:down": "docker compose down --remove-orphans",
+    "compose:up": "docker compose up --build",
+    "dev": "turbo run dev --parallel",
+    "format": "biome format --write .",
+    "lint": "biome lint .",
+    "registry:check": "node scripts/check-registry.mjs",
+    "test": "turbo run test",
+    "test:changed": "turbo run test --filter=...[HEAD^]",
+    "test:foundry-smoke": "turbo run build --filter=@arcane-table/converter-cli && node scripts/foundry-smoke.mjs",
+    "typecheck": "turbo run typecheck",
+    "verify": "corepack pnpm registry:check && corepack pnpm boundaries:check && corepack pnpm format:check && corepack pnpm lint && corepack pnpm typecheck && corepack pnpm test && corepack pnpm build",
+    "format:check": "biome format ."
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.5",
+    "@types/node": "22.18.10",
+    "fast-check": "4.3.0",
+    "pnpm": "10.18.3",
+    "rimraf": "6.0.1",
+    "turbo": "2.5.8",
+    "typescript": "5.9.3",
+    "vitest": "3.2.4"
+  }
+}

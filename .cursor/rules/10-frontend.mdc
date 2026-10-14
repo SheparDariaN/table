@@ -1,0 +1,20 @@
+---
+description: Browser UI, state, accessibility, and API client rules
+globs:
+  - "apps/web/**/*.ts"
+  - "apps/web/**/*.tsx"
+alwaysApply: false
+---
+
+# Frontend
+
+- Treat server snapshots and events as canonical.
+- Keep optimistic updates reversible, pending, and keyed by command ID.
+- Validate all decoded API and WebSocket payloads before use.
+- Keep domain rules out of components and client stores.
+- Derive state with pure selectors; do not duplicate server state unnecessarily.
+- Handle loading, empty, error, offline, reconnecting, and forbidden states.
+- Provide keyboard and accessible alternatives for canvas interactions.
+- Clean up subscriptions, timers, observers, workers, and object URLs.
+- Add an error boundary around major UI/rendering surfaces.
+- Never cache or render data the current principal is not authorized to see.

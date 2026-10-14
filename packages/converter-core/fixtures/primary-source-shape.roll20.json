@@ -1,0 +1,88 @@
+{
+  "character": {
+    "attributes": {
+      "name": "Primary Shape Hero",
+      "avatar": "icons/svg/angel.svg",
+      "bio": "<p>Primary biography.</p>",
+      "gmnotes": "<p>Primary notes.</p>"
+    },
+    "blobDefaultToken": "{\"name\":\"Primary Token\",\"width\":70,\"height\":70,\"night_vision_distance\":60}",
+    "attribs": [
+      { "id": "a1", "name": "strength", "current": "15", "max": "" },
+      { "id": "a2", "name": "dexterity", "current": "14", "max": "" },
+      { "id": "a3", "name": "hp", "current": "", "max": "" },
+      { "id": "a4", "name": "ac", "current": "16", "max": "" },
+      { "id": "a5", "name": "inspiration", "current": "1", "max": "" },
+      { "id": "a6", "name": "exhaustion", "current": "2", "max": "" },
+      { "id": "a7", "name": "darkvision", "current": "30", "max": "" },
+      { "id": "a8", "name": "acrobatics_type", "current": "expertise", "max": "" },
+      { "id": "a9", "name": "acrobatics_flat", "current": "2", "max": "" },
+      { "id": "a10", "name": "acrobatics_roll", "current": "@{d20}+4", "max": "" },
+      { "id": "a11", "name": "kingdom_name", "current": "Must be filtered", "max": "" },
+      { "id": "a12", "name": "inventory_tab", "current": "all", "max": "" },
+      { "id": "a13", "name": "race_display", "current": "Variant Human", "max": "" },
+      { "id": "a14", "name": "class", "current": "Wizard", "max": "" },
+      { "id": "a15", "name": "class_hit_die", "current": "d6", "max": "" },
+      { "id": "a16", "name": "caster_progression", "current": "full", "max": "" },
+      { "id": "a17", "name": "backstory", "current": "<p>Safe backstory.</p>", "max": "" },
+      { "id": "a18", "name": "allies", "current": "<p>Safe allies.</p>", "max": "" },
+      { "id": "r1", "name": "repeating_inventory_ItemA_itemid", "current": "Shared-ID", "max": "" },
+      { "id": "r2", "name": "repeating_inventory_ItemA_itemname", "current": "Рапира", "max": "" },
+      { "id": "r3", "name": "repeating_inventory_ItemA_itemtype", "current": "Оружие", "max": "" },
+      { "id": "r4", "name": "repeating_inventory_ItemA_itemweight", "current": "2", "max": "" },
+      {
+        "id": "r5",
+        "name": "repeating_attack_AttackA_itemattackid",
+        "current": "shared-id",
+        "max": ""
+      },
+      {
+        "id": "r6",
+        "name": "repeating_attack_AttackA_atkname",
+        "current": "Different label",
+        "max": ""
+      },
+      {
+        "id": "r7",
+        "name": "repeating_attack_AttackA_atkattr_base",
+        "current": "dexterity",
+        "max": ""
+      },
+      { "id": "r8", "name": "repeating_attack_AttackA_dmgbase", "current": "1d8+2", "max": "" },
+      {
+        "id": "r9",
+        "name": "repeating_spell-cantrip_SpellA_spellname",
+        "current": "Light",
+        "max": ""
+      },
+      {
+        "id": "r10",
+        "name": "repeating_spell-cantrip_SpellA_spellschool",
+        "current": "Evocation",
+        "max": ""
+      },
+      {
+        "id": "r11",
+        "name": "repeating_spell-cantrip_SpellA_spellprepared",
+        "current": "1",
+        "max": ""
+      },
+      {
+        "id": "r12",
+        "name": "repeating_spell-cantrip_SpellA_spelldescription",
+        "current": "<p>Creates light.</p>",
+        "max": ""
+      },
+      {
+        "id": "r13",
+        "name": "repeating_resource_ResA_resource_name",
+        "current": "Arcane Recovery",
+        "max": ""
+      },
+      { "id": "r14", "name": "repeating_resource_ResA_resource_left", "current": "1", "max": "" },
+      { "id": "r15", "name": "repeating_resource_ResA_resource_max", "current": "1", "max": "" },
+      { "id": "r16", "name": "repeating_proficiencies_ProfA_name", "current": "Общий", "max": "" },
+      { "id": "r17", "name": "repeating_proficiencies_ProfA_type", "current": "Язык", "max": "" }
+    ]
+  }
+}

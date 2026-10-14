@@ -1,0 +1,21 @@
+---
+description: Concise architecture documentation and decision record rules
+globs:
+  - "README.md"
+  - "**/AGENTS.md"
+  - "docs/**/*.md"
+alwaysApply: false
+---
+
+# Documentation and ADRs
+
+- Keep docs concise, current, and actionable for engineers and AI agents.
+- State ownership, invariants, dependency direction, failure behavior, and verification.
+- Link to one canonical explanation instead of duplicating guidance.
+- Use repository-relative paths and terminology from `docs/glossary.md`.
+- Update docs in the same change when a public contract or workflow changes.
+- Add an ADR for durable, cross-cutting, or hard-to-reverse decisions.
+- ADRs contain status, date, context, decision, and consequences.
+- Never rewrite accepted ADR history; supersede it with a new ADR and links.
+- Include compatibility and migration impact for versioned-boundary changes.
+- Avoid speculative roadmaps, todo lists, and implementation details that quickly rot.

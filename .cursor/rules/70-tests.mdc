@@ -1,0 +1,24 @@
+---
+description: Deterministic unit, integration, contract, and end-to-end test rules
+globs:
+  - "**/*.test.ts"
+  - "**/*.test.tsx"
+  - "**/*.spec.ts"
+  - "**/*.spec.tsx"
+  - "**/test/**/*.ts"
+  - "**/tests/**/*.ts"
+alwaysApply: false
+---
+
+# Tests
+
+- Test observable behavior and public contracts, not private implementation.
+- Use immutable builders with explicit overrides and no production data.
+- Inject clocks, IDs, randomness, and I/O; never depend on test order.
+- Prefer table-driven tests for variants and property tests for invariants.
+- Use real PostgreSQL for persistence behavior; do not emulate its semantics.
+- Add contract fixtures for every supported boundary version.
+- Cover permission denial and redaction, not only successful authorization.
+- Assert idempotency, rollback, conflicts, duplicate events, gaps, and reconnects.
+- Keep golden files canonical, reviewable, and free of unstable values.
+- Give every defect fix a focused regression test at the lowest useful layer.

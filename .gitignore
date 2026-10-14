@@ -1,0 +1,35 @@
+# Dependencies and package-manager state
+node_modules/
+.pnpm-store/
+
+# Build, test, and tool caches
+dist/
+coverage/
+.turbo/
+.vite/
+*.tsbuildinfo
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# IDE and OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Runtime data
+data/
+uploads/
+tmp/
+*.log
+
+# Proprietary runtimes and private fixtures
+foundry-data/
+foundryvtt/
+fixtures/private/
+fixtures/real/

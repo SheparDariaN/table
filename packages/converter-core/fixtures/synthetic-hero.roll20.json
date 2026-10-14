@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "character": {
+    "name": "Synthetic Hero",
+    "bio": "<p>A wholly synthetic adventurer.</p>",
+    "gmnotes": "<script>alert('no')</script><p>Public synthetic notes.</p>",
+    "avatar": "icons/svg/mystery-man.svg",
+    "defaulttoken": "{\"name\":\"Synthetic Hero\",\"width\":70,\"height\":140,\"showname\":20}",
+    "attributes": [
+      { "name": "strength", "current": "8" },
+      { "name": "strength", "current": "16" },
+      { "name": "dexterity", "current": "14" },
+      { "name": "constitution", "current": "13" },
+      { "name": "intelligence", "current": "12" },
+      { "name": "wisdom", "current": "10" },
+      { "name": "charisma", "current": "15" },
+      { "name": "strength_roll", "current": "@{d20}+@{strength_mod}" },
+      { "name": "hp", "current": "19", "max": "24" },
+      { "name": "hp_temp", "current": "3" },
+      { "name": "ac", "current": "15" },
+      { "name": "speed", "current": "30 ft." },
+      { "name": "spellcasting_ability", "current": "charisma" },
+      { "name": "spell_save_dc", "current": "13" },
+      { "name": "gp", "current": "42" },
+      { "name": "languages", "current": "Common, Elvish" },
+      { "name": "class", "current": "Bard" },
+      { "name": "subclass", "current": "College of Lore" },
+      { "name": "race", "current": "Human" },
+      { "name": "background", "current": "Sage" },
+      { "name": "level", "current": "3" },
+      { "name": "acrobatics_prof", "current": "1" },
+      { "name": "_reporder_repeating_inventory", "current": "-Sword,-Pack" },
+      { "name": "Repeating_Inventory_-Sword_itemname", "current": "Longsword" },
+      { "name": "repeating_inventory_-Sword_itemtype", "current": "Weapon" },
+      { "name": "repeating_inventory_-Sword_itemcount", "current": "1" },
+      { "name": "repeating_inventory_-Sword_equipped", "current": "1" },
+      { "name": "repeating_inventory_-Sword_dmgbase", "current": "1d8 + @mod" },
+      { "name": "repeating_inventory_-Pack_itemname", "current": "Explorer's Pack" },
+      { "name": "repeating_inventory_-Pack_itemcount", "current": "1" },
+      { "name": "repeating_spell-1_-Spell_spellname", "current": "Healing Word" },
+      { "name": "repeating_spell-1_-Spell_spelllevel", "current": "1" },
+      { "name": "repeating_spell-1_-Spell_spelldescription", "current": "<p>Heals an ally.</p>" },
+      { "name": "repeating_spell-1_-Spell_dmgbase", "current": "1d4 + @mod" },
+      { "name": "repeating_feat_-Feat_name", "current": "Inspiring Leader" },
+      {
+        "name": "repeating_feat_-Feat_description",
+        "current": "<img src=x onerror=alert(1)><p>Speech.</p>"
+      }
+    ]
+  }
+}

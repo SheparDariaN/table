@@ -1,0 +1,20 @@
+---
+description: Strict TypeScript conventions for all TypeScript code
+globs:
+  - "**/*.ts"
+  - "**/*.tsx"
+alwaysApply: false
+---
+
+# Global TypeScript
+
+- Enable strict null checks and preserve strict compiler settings.
+- Never use `any`; use `unknown` plus runtime narrowing at trust boundaries.
+- Add explicit return types to exported functions.
+- Prefer `const`, readonly data, pure functions, and discriminated unions.
+- Prefer functions/modules over classes; use classes only for required lifecycle or framework integration.
+- Model expected failures as typed results, not exceptions or sentinel values.
+- Avoid non-null assertions and unchecked casts; prove or validate the type.
+- Keep imports through package/module public entry points.
+- Inject clocks, ID generators, and I/O capabilities.
+- Use exhaustive `never` checks when switching over unions.
